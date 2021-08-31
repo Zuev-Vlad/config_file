@@ -1,0 +1,1 @@
+export const vasySay = () => alert("I'm Vasy! Eeee!")
