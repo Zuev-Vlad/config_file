@@ -51,42 +51,47 @@ module.exports = {
 
     module: {
         rules: [{
-            test: /\.m?js$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env', "@babel/preset-react"],
-                    plugins: ["transform-regenerator"],
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', "@babel/preset-react"],
+                        plugins: ["transform-regenerator"],
+                    }
                 }
-            }
-        },
-        {
-            test: /\.less$/i,
-            use: [MiniCssExtractPlugin.loader,
-                "css-loader",
-                "less-loader",
-            ],
-        },
-        {
-            test: /\.css$/i,
-            use: [MiniCssExtractPlugin.loader,
-                "css-loader",
-            ],
-        },
-        {
-            test: /\.s[ac]ss$/i,
-            use: [
-                "css-loader",
-                "sass-loader",
-            ],
-        },
-        {
-            test: /\.(woff(2)?|ttf|eot|svg|png|jpg)(\?v=\d+\.\d+\.\d+)?$/,
-            use: [{
-                loader: 'url-loader',
-            },]
-        },
+            },
+            {
+                test: /\.less$/i,
+                use: [MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "less-loader",
+                ],
+            },
+            {
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader,
+                    "css-loader",
+                ],
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    "css-loader",
+                    "sass-loader",
+                ],
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg|png|jpg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [{
+                    loader: 'url-loader',
+                }, ]
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
         ]
     },
     optimization: {
