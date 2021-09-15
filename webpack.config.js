@@ -12,7 +12,8 @@ const defPath = {
 module.exports = {
     entry: {
         // enter EntryPoints (path file src, where key -> name build file), man! 
-        core: defPath.src + '/js/test/test.js'
+        core: defPath.src + '/js/test/test.js',
+        ts: defPath.src + '/js/ts/ts.ts'
     },
     output: {
         filename: "./js/[name].js?[contenthash]",
